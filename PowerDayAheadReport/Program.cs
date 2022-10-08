@@ -1,5 +1,7 @@
+using Microsoft.Extensions.Configuration;
 using PowerDayAheadReport;
 using Serilog;
+using PowerDayAheadReport.Models;
 
 Log.Logger = new LoggerConfiguration()
     .WriteTo.Console()
@@ -11,8 +13,10 @@ Log.Logger = new LoggerConfiguration()
 try
 {
     IHost host = Host.CreateDefaultBuilder(args)
-        .ConfigureServices(services =>
+        .ConfigureServices((hostContext, services) =>
         {
+            IConfiguration configuration = hostContext.Configuration;
+            services.Configure<ServiceConfig>(configuration.GetSection(nameof(ServiceConfig)));
             services.AddHostedService<Worker>();
         })
         .UseWindowsService()
