@@ -1,14 +1,15 @@
 using Microsoft.Extensions.Options;
-using PowerDayAheadReport.Models;
+using Models = PowerDayAheadReport.Models;
+using BusinessLogic = PowerDayAheadReport.BusinessLogic;
 
 namespace PowerDayAheadReport;
 
 public class Worker : BackgroundService
 {
     private readonly ILogger<Worker> _logger;
-    private readonly IOptions<ServiceConfig> _config;
+    private readonly IOptions<Models.ServiceConfig> _config;
 
-    public Worker(ILogger<Worker> logger, IOptions<ServiceConfig> config)
+    public Worker(ILogger<Worker> logger, IOptions<Models.ServiceConfig> config)
     {
         _logger = logger;
         _config = config;
@@ -18,8 +19,16 @@ public class Worker : BackgroundService
     {
         while (!stoppingToken.IsCancellationRequested)
         {
-            _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
-            await Task.Delay(1000, stoppingToken);
+            try
+            {
+                BusinessLogic.PowerDayAheadReport.Create(_config.Value.OutputFilePath);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"Error while creating the report");
+            }
+
+            await Task.Delay(_config.Value.Interval * 60 * 1000, stoppingToken);
         }
     }
 

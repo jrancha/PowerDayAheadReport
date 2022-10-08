@@ -31,7 +31,5 @@ catch (Exception ex)
 }
 finally
 {
-    Log.Information("Ending power day ahead report service");
-
     Log.CloseAndFlush();
 }

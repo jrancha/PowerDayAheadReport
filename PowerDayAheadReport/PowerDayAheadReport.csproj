@@ -14,4 +14,10 @@
     <PackageReference Include="Serilog.Sinks.Console" Version="4.1.1-dev-00896" />
     <PackageReference Include="Serilog.Sinks.File" Version="5.0.1-dev-00947" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="PowerService">
+      <HintPath>..\..\..\..\Downloads\PetroineosCodingChallenge-main\PetroineosCodingChallenge-main\PowerService.dll</HintPath>
+    </Reference>
+  </ItemGroup>
 </Project>

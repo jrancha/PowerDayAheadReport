@@ -2,7 +2,6 @@
 
 public class ServiceConfig
 {
-    public int? Interval { get; set; }
+    public int Interval { get; set; }
     public string? OutputFilePath { get; set; }
-
 }
