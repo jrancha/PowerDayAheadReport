@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32922.545
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PowerDayAheadReport", "PowerDayAheadReport\PowerDayAheadReport.csproj", "{303FFC67-EF37-49DD-8A85-712B49C45AB5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{303FFC67-EF37-49DD-8A85-712B49C45AB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{303FFC67-EF37-49DD-8A85-712B49C45AB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{303FFC67-EF37-49DD-8A85-712B49C45AB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{303FFC67-EF37-49DD-8A85-712B49C45AB5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8D7F760A-452A-46EA-B67B-C8F73A6722FA}
+	EndGlobalSection
+EndGlobal
