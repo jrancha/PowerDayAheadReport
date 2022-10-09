@@ -3,20 +3,18 @@ using PowerDayAheadReport.Helpers;
 
 namespace PowerDayAheadReport.BusinessLogic;
 
-internal static class PowerDayAheadReport
+public static class Report
 {
     public static void Create(string path)
     {
         var powerDay = PowerHelper.GetPowerDayAhead(DateTime.Now);
 
         var trades = GetTrades(powerDay);
+        var volumes = trades.Result.SelectMany(x => x.Periods);
 
-        var aggregatedPeriods = trades.Result
-            .SelectMany(x => x.Periods)
-            .GroupBy(x => x.Period)
-            .ToDictionary(x => x.Key, x => x.Sum(y => y.Volume));
+        var aggregatedVolumes = GetAggregatedVolumes(volumes);
 
-        Save(aggregatedPeriods, path);
+        Save(aggregatedVolumes, path);
     }
 
     private static async Task<IEnumerable<Services.PowerTrade>> GetTrades(DateTime powerDay)
@@ -34,6 +32,13 @@ internal static class PowerDayAheadReport
         }
 
         return trades;
+    }
+
+    private static Dictionary<int, double> GetAggregatedVolumes(IEnumerable<Services.PowerPeriod> volumes)
+    {
+        return volumes
+            .GroupBy(x => x.Period)
+            .ToDictionary(x => x.Key, x => x.Sum(y => y.Volume));
     }
 
     private static async void Save(Dictionary<int, double> data, string path)

@@ -21,7 +21,7 @@ public class Worker : BackgroundService
         {
             try
             {
-                BusinessLogic.PowerDayAheadReport.Create(_config.Value.OutputFilePath);
+                BusinessLogic.Report.Create(_config.Value.OutputFilePath);
             }
             catch (Exception ex)
             {

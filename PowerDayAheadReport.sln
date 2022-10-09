@@ -5,6 +5,8 @@ VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PowerDayAheadReport", "PowerDayAheadReport\PowerDayAheadReport.csproj", "{303FFC67-EF37-49DD-8A85-712B49C45AB5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PowerDayAheadReportTests", "PowerDayAheadReportTests\PowerDayAheadReportTests.csproj", "{8F82AB1D-453A-4AA7-BE25-E40B91DC5C28}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{303FFC67-EF37-49DD-8A85-712B49C45AB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{303FFC67-EF37-49DD-8A85-712B49C45AB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{303FFC67-EF37-49DD-8A85-712B49C45AB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F82AB1D-453A-4AA7-BE25-E40B91DC5C28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F82AB1D-453A-4AA7-BE25-E40B91DC5C28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F82AB1D-453A-4AA7-BE25-E40B91DC5C28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F82AB1D-453A-4AA7-BE25-E40B91DC5C28}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
