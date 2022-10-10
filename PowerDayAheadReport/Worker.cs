@@ -13,6 +13,14 @@ public class Worker : BackgroundService
     {
         _logger = logger;
         _config = config;
+
+        if (_config.Value.Interval == 0)
+            throw new ArgumentNullException("Power day ahead report service run interval");
+        else if (string.IsNullOrEmpty(_config.Value.OutputFilePath))
+            throw new ArgumentNullException("Power day ahead report service output file path");
+
+        if (!Directory.Exists(_config.Value.OutputFilePath))
+            Directory.CreateDirectory(_config.Value.OutputFilePath);
     }
 
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)

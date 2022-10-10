@@ -5,7 +5,7 @@ using PowerDayAheadReport.Models;
 
 Log.Logger = new LoggerConfiguration()
     .WriteTo.Console()
-    .WriteTo.File("logs/log.txt",
+    .WriteTo.File("c:\\temp\\logs\\log.txt",
         restrictedToMinimumLevel: Serilog.Events.LogEventLevel.Information,
         rollingInterval: RollingInterval.Day)
     .CreateLogger();

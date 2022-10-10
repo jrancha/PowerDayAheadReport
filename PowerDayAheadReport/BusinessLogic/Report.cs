@@ -48,7 +48,7 @@ public static class Report
         var lines = new List<string>() { "Local Time,Volume" };
         lines.AddRange(sortedData.Select(x => string.Join(",", $"{(x.Key == 1 ? 23 : x.Key - 2):00}:00", x.Value)));
 
-        string filePath = Path.Combine(path, $"PowerPosition_{DateTime.Now:yyyyMMdd_HHmm}.csv");
+        string filePath = Path.GetFullPath(Path.Combine(path, $"PowerPosition_{DateTime.Now:yyyyMMdd_HHmm}.csv"));
 
         Log.Information($"Saving the report at {filePath}");
 
